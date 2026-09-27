@@ -5,8 +5,8 @@ insert into edoshatch360_plans
    max_farms, max_houses, max_birds, max_users, features, is_popular, sort_order)
 values
   ('starter', 'Starter', 'For the farmer getting organised',
-   'Everything you need to know your birds, your feed and your money. Free while you grow.',
-   0, 'KES', 'month', 1, 2, 500, 2,
+   'Everything you need to know your birds, your feed and your money.',
+   150000, 'KES', 'month', 1, 2, 500, 2,
    '["1 farm, up to 2 houses","Up to 500 birds","Daily records & mortality tracking","Egg production log","Feed & expense tracking","Simple profit view","Works offline","Mobile app (PWA)"]'::jsonb,
    false, 1),
 
@@ -35,8 +35,8 @@ insert into edoshatch360_cms_faqs (category, question, answer, sort_order) value
    'Not at all. New accounts start in Simple mode, which shows only birds, eggs, feed, sales, expenses and profit. Advanced tools like feed conversion, production curves and benchmarking stay hidden until you switch them on.', 2),
   ('general', 'Which birds does it handle?',
    'Broilers, layers, kienyeji, improved kienyeji, breeders, chicks, pullets and turkey. You can also add your own category if you keep something else.', 3),
-  ('pricing', 'Is the Starter plan really free?',
-   'Yes — one farm, up to two houses and 500 birds, at no cost, for as long as you need it. You only pay when your farm outgrows it.', 4),
+  ('pricing', 'What happens after the free trial?',
+   'The first two weeks are free and need no card. After that Starter is KSh 1,500 a month for one farm, up to two houses and 500 birds; you only pay more when your farm outgrows it.', 4),
   ('pricing', 'How do I pay?',
    'M-Pesa. You will get an STK push on the number attached to your account. Card payments are coming for customers outside Kenya.', 5),
   ('pricing', 'Can I change plans later?',

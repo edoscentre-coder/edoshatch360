@@ -124,11 +124,11 @@ export function planAllows(plan: PlanCode | null, feature: PlanFeature): boolean
 /**
  * What a subscription is worth today, which is not always the plan on it.
  *
- * A trial grants the full paid product. The seeded trial is two weeks of
- * *Starter* — a free plan — which gives a new farm nothing to evaluate and no
- * reason to pay at the end of it. Every farm currently on the platform is
- * trialing, so this also means none of them loses a screen the day gating
- * arrives.
+ * A trial grants the full paid product. The seeded trial is two weeks on
+ * *Starter*, the smallest plan, which on its own gives a new farm little to
+ * evaluate — so the trial is served the Professional feature set instead.
+ * Every farm currently on the platform is trialing, so this also means none
+ * of them loses a screen the day gating arrives.
  *
  * Enterprise is deliberately not the trial tier: it is the "talk to us" plan,
  * and white-label and API access are not built.

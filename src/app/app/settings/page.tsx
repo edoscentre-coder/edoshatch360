@@ -265,7 +265,7 @@ export default async function SettingsPage({
                     <p className="mt-0.5 text-sm text-ink-soft">
                       {plan && plan.price_cents > 0
                         ? `${formatMoney(plan.price_cents, { currency: plan.currency })} per ${plan.billing_period}`
-                        : "Free"}
+                        : "Priced on request"}
                     </p>
                   </div>
                   {subscription && (
@@ -287,7 +287,7 @@ export default async function SettingsPage({
                 {subscription?.trial_ends_at && subscription.status === "trialing" && (
                   <p className="mt-3 rounded-lg border border-info/25 bg-info-soft px-3 py-2.5 text-sm text-info">
                     Your trial runs until {formatDate(subscription.trial_ends_at, "long")}.
-                    Nothing stops working when it ends — you drop to the free Starter limits.
+                    Nothing stops working when it ends — you move to the Starter plan&rsquo;s limits.
                   </p>
                 )}
 

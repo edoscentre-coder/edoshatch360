@@ -79,7 +79,7 @@ export function SiteHeader() {
                 : "bg-brand text-white hover:bg-brand-dark",
             )}
           >
-            Start free
+            Start free trial
           </Link>
         </div>
 
@@ -125,7 +125,7 @@ export function SiteHeader() {
                 href="/signup"
                 className="rounded-lg bg-brand px-3 py-3 text-center text-sm font-medium text-white"
               >
-                Start free
+                Start free trial
               </Link>
             </div>
           </nav>

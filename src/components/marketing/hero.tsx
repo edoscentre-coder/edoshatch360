@@ -174,7 +174,7 @@ export function Hero() {
         </div>
 
         <p className="rise mt-5 text-sm text-white/60" style={{ animationDelay: "740ms" }}>
-          Free on the Starter plan · No card needed · Works without signal
+          Two weeks free · No card needed · Works without signal
         </p>
 
         {/* Floating metrics (spec §6), counting up once as they arrive. Two

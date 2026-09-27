@@ -101,7 +101,7 @@ export function SignupForm() {
       )}
 
       <Button type="submit" size="lg" busy={busy}>
-        {busy ? "Creating your account" : "Create free account"}
+        {busy ? "Creating your account" : "Start my free trial"}
       </Button>
 
       <p className="text-xs leading-relaxed text-ink-faint">

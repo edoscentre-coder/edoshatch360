@@ -474,7 +474,7 @@ export default async function LandingPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
           <SectionHeading
             eyebrow="Pricing"
-            title="Start free. Pay when the farm grows."
+            title="Two weeks free. Pay when the farm grows."
             lead="Every plan includes offline recording, the mobile app and your full data export. Pay by M-Pesa."
           />
           <div className="mt-10">
@@ -509,7 +509,7 @@ export default async function LandingPage() {
               href="/signup"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-gold px-6 text-[0.9375rem] font-semibold text-brand-darker transition-transform hover:-translate-y-0.5 hover:bg-white"
             >
-              Create your free account
+              Start your free trial
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link

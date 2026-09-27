@@ -34,7 +34,7 @@ export default function LoginPage() {
       <p className="mt-6 text-sm text-ink-soft">
         New to Hatch360?{" "}
         <Link href="/signup" className="font-medium text-brand hover:underline">
-          Create a free account
+          Start a free trial
         </Link>
       </p>
     </div>

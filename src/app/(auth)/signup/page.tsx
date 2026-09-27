@@ -5,7 +5,7 @@ import { SignupForm } from "./signup-form";
 export const metadata: Metadata = {
   title: "Create your account",
   description:
-    "Create a free EDOS Hatch360 account and start tracking your flock, production, feed and profit today.",
+    "Start a two-week free trial of EDOS Hatch360 and track your flock, production, feed and profit today.",
   robots: { index: false, follow: false },
 };
 
@@ -16,7 +16,7 @@ export default function SignupPage() {
         Start with your first flock
       </h1>
       <p className="mt-1.5 text-sm text-ink-soft">
-        Free on the Starter plan. No card, no commitment.
+        Two weeks free. No card, no commitment.
       </p>
 
       <div className="mt-7">

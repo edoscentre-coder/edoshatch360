@@ -274,13 +274,13 @@ export default function FeaturesPage() {
           </h2>
           <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink-soft">
             Create a farm, add a flock and record one day. It takes about five minutes,
-            and it is free.
+            and the first two weeks are free.
           </p>
           <Link
             href="/signup"
             className="mt-6 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-brand px-6 text-[0.9375rem] font-semibold text-white transition-colors hover:bg-brand-dark"
           >
-            Start free
+            Start free trial
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

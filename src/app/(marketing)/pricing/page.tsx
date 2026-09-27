@@ -11,7 +11,7 @@ import { formatNumber } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "EDOS Hatch360 pricing for Kenyan poultry farms. Start free on the Starter plan; pay by M-Pesa as your farm grows. No card required.",
+    "EDOS Hatch360 pricing for Kenyan poultry farms. Start with a two-week free trial; pay by M-Pesa as your farm grows. No card required.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -41,7 +41,7 @@ export default async function PricingPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-16">
           <SectionHeading
             eyebrow="Pricing"
-            title="Start free. Pay when the farm grows."
+            title="Two weeks free. Pay when the farm grows."
             lead="Every plan includes offline recording, the mobile app, role-based access and your full data export. Pay by M-Pesa, change plan any time."
           />
           <div className="mt-10">

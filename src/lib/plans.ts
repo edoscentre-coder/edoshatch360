@@ -124,7 +124,7 @@ export function planAllows(plan: PlanCode | null, feature: PlanFeature): boolean
 /**
  * What a subscription is worth today, which is not always the plan on it.
  *
- * A trial grants the full paid product. The seeded trial is thirty days of
+ * A trial grants the full paid product. The seeded trial is two weeks of
  * *Starter* — a free plan — which gives a new farm nothing to evaluate and no
  * reason to pay at the end of it. Every farm currently on the platform is
  * trialing, so this also means none of them loses a screen the day gating

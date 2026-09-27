@@ -16,6 +16,21 @@ import type { SubStatus } from "@/lib/database.types";
 
 export type PlanCode = "starter" | "growth" | "professional" | "enterprise";
 
+/**
+ * How long a trial runs.
+ *
+ * Signup does not read this — a new farm's trial is set by
+ * `edoshatch360_create_tenant`, in SQL, where the row is written. This is the
+ * same figure for the places TypeScript decides it, chiefly an administrator
+ * extending a trial by hand, so the two stay in step by being written down
+ * together: change one and change migration 0032.
+ *
+ * Also the label on that button. They used to be two separate literals — a
+ * `30` passed to the action and a "30" typed into the text beside it — which
+ * is a pair that drifts the first time only one of them is edited.
+ */
+export const TRIAL_DAYS = 14;
+
 /** Ascending. A plan includes everything the plans below it include. */
 const RANK: Record<PlanCode, number> = {
   starter: 0,
@@ -124,7 +139,7 @@ export function planAllows(plan: PlanCode | null, feature: PlanFeature): boolean
 /**
  * What a subscription is worth today, which is not always the plan on it.
  *
- * A trial grants the full paid product. The seeded trial is two weeks on
+ * A trial grants the full paid product. The seeded trial is two weeks (TRIAL_DAYS) on
  * *Starter*, the smallest plan, which on its own gives a new farm little to
  * evaluate — so the trial is served the Professional feature set instead.
  * Every farm currently on the platform is trialing, so this also means none

@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader } from "@/components/ui/card";
 import { Badge, type Tone } from "@/components/ui/badge";
-import { PLAN_LABEL, type PlanCode } from "@/lib/plans";
+import { PLAN_LABEL, TRIAL_DAYS, type PlanCode } from "@/lib/plans";
 import type { SubStatus } from "@/lib/database.types";
 import { cn, formatDate, formatMoney, formatNumber } from "@/lib/utils";
 
@@ -269,9 +269,9 @@ export function AdminConsole({
                     size="sm"
                     variant="secondary"
                     disabled={pending || !o.status}
-                    onClick={() => run(() => extendTrial(o.id, 30))}
+                    onClick={() => run(() => extendTrial(o.id, TRIAL_DAYS))}
                   >
-                    Extend trial 30 days
+                    Extend trial {TRIAL_DAYS} days
                   </Button>
 
                   {/* Opens their real screens read-only, as a support tool —

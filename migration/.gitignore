@@ -1,0 +1,5 @@
+# Dumps contain real farm records, branding files and auth password hashes.
+# They must never reach a git remote.
+dump/
+*.csv
+*.columns

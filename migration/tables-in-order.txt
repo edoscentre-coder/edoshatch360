@@ -1,0 +1,47 @@
+# edoshatch360 tables in foreign-key load order.
+# Computed from pg_constraint on 2026-10-04. 37 tables, 6 levels.
+# No self-referencing foreign keys in this product.
+
+# -- level 0 --
+edoshatch360_archive_deleted_tenants
+edoshatch360_cms_faqs
+edoshatch360_cms_media
+edoshatch360_cms_pages
+edoshatch360_cms_testimonials
+edoshatch360_contact_messages
+edoshatch360_plans
+edoshatch360_tenants
+edoshatch360_weight_benchmarks
+# -- level 1 --
+edoshatch360_cms_sections
+edoshatch360_customers
+edoshatch360_farms
+edoshatch360_products
+edoshatch360_subscriptions
+edoshatch360_users
+# -- level 2 --
+edoshatch360_ai_conversations
+edoshatch360_audit_logs
+edoshatch360_farm_assignments
+edoshatch360_houses
+edoshatch360_inventory
+edoshatch360_invites
+edoshatch360_memberships
+edoshatch360_notifications
+edoshatch360_payments
+edoshatch360_sales
+edoshatch360_settings
+# -- level 3 --
+edoshatch360_ai_messages
+edoshatch360_customer_payments
+edoshatch360_flocks
+# -- level 4 --
+edoshatch360_daily_records
+edoshatch360_expenses
+edoshatch360_health_records
+edoshatch360_medications
+edoshatch360_sale_items
+edoshatch360_tasks
+edoshatch360_vaccinations
+# -- level 5 --
+edoshatch360_inventory_transactions

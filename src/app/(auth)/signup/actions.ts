@@ -1,17 +1,12 @@
 "use server";
 
 import { headers } from "next/headers";
+import { originFromHeaders } from "@/lib/site-url";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { canSendEmail, sendEmail, signupConfirmEmail } from "@/lib/email";
 
 export type SignupResult = { ok: true } | { ok: false; error: string };
 
-async function origin(): Promise<string> {
-  const h = await headers();
-  const host = h.get("x-forwarded-host") ?? h.get("host") ?? "localhost:3000";
-  const proto = h.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  return `${proto}://${host}`;
-}
 
 /**
  * Creates the account and emails the confirmation, as Hatch360.
@@ -50,7 +45,7 @@ export async function signUpWithEmail(input: {
     return { ok: false, error: "Sign-up isn't set up yet. Please contact support." };
   }
 
-  const base = await origin();
+  const base = originFromHeaders(await headers());
   const { data, error } = await admin.auth.admin.generateLink({
     type: "signup",
     email,

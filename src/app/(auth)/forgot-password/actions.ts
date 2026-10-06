@@ -1,6 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
+import { originFromHeaders } from "@/lib/site-url";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { canSendEmail, passwordResetEmail, sendEmail } from "@/lib/email";
 
@@ -30,13 +31,6 @@ function rateLimited(email: string): boolean {
   return false;
 }
 
-/** The address this request arrived on, so the link comes back to the same place. */
-async function origin(): Promise<string> {
-  const h = await headers();
-  const host = h.get("x-forwarded-host") ?? h.get("host") ?? "localhost:3000";
-  const proto = h.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  return `${proto}://${host}`;
-}
 
 /**
  * Emails a password-reset link, as Hatch360.
@@ -86,7 +80,7 @@ export async function requestPasswordReset(email: string): Promise<ResetResult> 
     .maybeSingle();
   if (!user) return indistinguishable;
 
-  const base = await origin();
+  const base = originFromHeaders(await headers());
   const { data, error } = await admin.auth.admin.generateLink({
     type: "recovery",
     email: address,

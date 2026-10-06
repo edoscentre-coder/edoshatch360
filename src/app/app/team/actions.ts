@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
+import { originFromHeaders } from "@/lib/site-url";
 import { canSendEmail, sendEmail, teamInviteEmail } from "@/lib/email";
 
 import { createClient } from "@/lib/supabase/server";
@@ -37,19 +38,6 @@ function readable(message: string | undefined, fallback: string): string {
     : fallback;
 }
 
-/**
- * Where an invitation link should point.
- *
- * Read from the request rather than NEXT_PUBLIC_SITE_URL, which defaults to
- * http://localhost:3000 -- a colleague who clicked that would reach their own
- * machine, or nothing at all.
- */
-async function inviteOrigin(): Promise<string> {
-  const h = await headers();
-  const host = h.get("x-forwarded-host") ?? h.get("host") ?? "localhost:3000";
-  const proto = h.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  return `${proto}://${host}`;
-}
 
 export async function inviteMember(
   _prev: TeamState,
@@ -85,7 +73,7 @@ export async function inviteMember(
   // The token is the credential, so the link is shown once and never stored in
   // the page's data. It is still returned even when the email goes out, so an
   // owner sitting next to the new worker can just show them the screen.
-  const base = await inviteOrigin();
+  const base = originFromHeaders(await headers());
   const link = `${base}/invite/${data as string}`;
 
   if (!canSendEmail()) {
